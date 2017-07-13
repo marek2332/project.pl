@@ -1,6 +1,7 @@
 <?php
-session_start();
 require "db.php";
+session_start();
+
 
 $data = $_POST;
 
@@ -12,11 +13,13 @@ if (isset($data['user_edit']) )
 
 if (isset($data['user_list']) )
 {
-
+    header("Location: userList.php");
 }
 
-
-
+if (isset($data['user_delete']) )
+{
+    header("Location: userDelete.php");
+}
 
 ?>
 

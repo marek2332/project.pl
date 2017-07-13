@@ -1,7 +1,8 @@
 <?php
+require "db.php";
 session_start();
 
-require "db.php";
+
 
 
 $data = $_POST;
