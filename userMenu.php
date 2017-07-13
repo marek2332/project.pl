@@ -4,14 +4,15 @@ require "db.php";
 
 $data = $_POST;
 
-if (isset($data['user_delete']) )
+if (isset($data['user_edit']) )
 
 {
-    $user = R::findOne('users', 'login = ?', array($data['login']));
+    header("Location: userEdit.php");
+}
 
-    if($user){
-    R::trash( $user );
-        }
+if (isset($data['user_list']) )
+{
+
 }
 
 
@@ -29,6 +30,7 @@ if (isset($data['user_delete']) )
     <p>
         <button type="submit" name="user_edit">Edycja użytkownika</button>
     </p>
+
 
     <p>
         <button type="submit" name="user_delete">Usuwanie użytkownika</button>
