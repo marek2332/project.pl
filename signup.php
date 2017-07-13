@@ -29,6 +29,9 @@ if (isset($data['do_sigup'])) {
         $user = R::dispense('users');
         $user->login = $data['login'];
         $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+        $user->name = $data['name'];
+        $user->surname = $data['surname'];
+        $user->birth_date = $data['birth_date'];
         R::store($user);
         echo '<div style="color: green;">Rejestracja ukończona</div><hr>';
     } else {
@@ -55,6 +58,21 @@ if (isset($data['do_sigup'])) {
     <p>
     <p><strong>Powtórzenie hasła</strong></p>
     <input type="password" name="password_2">
+    </p>
+
+    <p>
+    <p><strong>Imię</strong></p>
+    <input type="text" name="name">
+    </p>
+
+    <p>
+    <p><strong>Nazwisko</strong></p>
+    <input type="text" name="surname">
+    </p>
+
+    <p>
+    <p><strong>Data urodzenia</strong></p>
+    <input type="date" name="birth_date">
     </p>
 
     <p>
