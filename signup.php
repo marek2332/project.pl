@@ -33,8 +33,12 @@ if (isset($data['do_sigup'])) {
         $user->name = $data['name'];
         $user->surname = $data['surname'];
         $user->birth_date = $data['birth_date'];
-        $id = R::store($user);
-        echo '<div style="color: green;">Rejestracja ukończona</div><hr>';
+
+
+        R::store($user);
+
+
+        echo '<div style="color: green;">Rejestracja ukończona</bt> Link to <a href="login.php"> main</a> page</div><hr>';
     } else {
         echo '<div style="color: red;">' . array_shift($err) . '</div><hr>';
     }

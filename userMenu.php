@@ -40,3 +40,5 @@ if (isset($data['user_delete']) )
     </p>
 
 </form>
+
+<div>Link to <a href="groupMenu.php">Group Menu</a></div><hr>;

@@ -2,26 +2,24 @@
 require "db.php";
 session_start();
 
-
 $data= $_POST;
 
-if (isset($data['change_name']) ) {
-
-  $user = R::load( 'users', $_SESSION['logged_user']->id );
-  $user->name = $data['edit_login'];
-   R::store( $user );
-
-}
 if (isset($data['change_login']) ) {
 
     $user = R::load( 'users', $_SESSION['logged_user']->id );
-    $user->surname = $data['edit_name'];
+    $user->login = $data['edit_login'];
+    R::store( $user );
+
+}if (isset($data['change_name']) ) {
+
+    $user = R::load( 'users', $_SESSION['logged_user']->id );
+    $user->name = $data['edit_name'];
     R::store( $user );
 
 }if (isset($data['change_surname']) ) {
 
     $user = R::load( 'users', $_SESSION['logged_user']->id );
-    $user->login = $data['edit_surname'];
+    $user->surname = $data['edit_surname'];
     R::store( $user );
 
 }if (isset($data['change_date']) ) {
@@ -35,6 +33,10 @@ if (isset($data['change_login']) ) {
     $user = R::load( 'users', $_SESSION['logged_user']->id );
     $user->name = $data['edit_password'];
     R::store( $user );
+
+}if (isset($data['go_back']) ) {
+
+    header("Location: userMenu.php");
 
 }
 ?>
@@ -69,6 +71,10 @@ if (isset($data['change_login']) ) {
 
     <p>
         <button type="submit" name="change_password">Change Password</button>
+    </p>
+
+    <p>
+        <button type="submit" name="go_back">Back to the user menu</button>
     </p>
 
 

@@ -22,7 +22,7 @@ if (isset($data['do_login']))
 
             $_SESSION['logged_user'] = $user;
             echo '<div style="color: green;">Użytkownik został zalogowany<br/> 
-                       Przejście na <a href="userMenu.php"> strone</a> użytkownia</div><hr>';
+                       Link to <a href="userMenu.php">User menu</a></div><hr>';
 
 
         }else
