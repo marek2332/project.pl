@@ -6,7 +6,7 @@ $data = $_POST;
 
 if (isset($data['group_list']) )
 {
-    header("Location: groupEdit.php");
+    header("Location: userList.php");
 }
 
 if (isset($data['group_edit']) )
